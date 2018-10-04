@@ -9,11 +9,12 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
 
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import rootReducer from './reducers/index'
+import reduxPromise from 'redux-promise'
 
 ReactDOM.render(
-    <Provider store={createStore(rootReducer)}>
+    <Provider store={createStore(rootReducer, {}, applyMiddleware(reduxPromise))}>
         <Router>
             <App />
         </Router>
