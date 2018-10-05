@@ -11,10 +11,10 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import rootReducer from './reducers/index'
-import reduxPromise from 'redux-promise'
+import rPromise from './middleware/r_promise'
 
 ReactDOM.render(
-    <Provider store={createStore(rootReducer, {}, applyMiddleware(reduxPromise))}>
+    <Provider store={createStore(rootReducer, {}, applyMiddleware(rPromise))}>
         <Router>
             <App />
         </Router>
