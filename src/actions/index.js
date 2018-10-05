@@ -35,3 +35,9 @@ export function toggleCompleted(itemId){
         payload: resp
     }
 }
+
+export function clearSingleItem(){
+    return{
+        type: types.CLEAR_SINGLE_ITEM
+    }
+}

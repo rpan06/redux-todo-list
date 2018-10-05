@@ -6,6 +6,10 @@ const DEFAULT_STATE = {
 
 export default function(state = DEFAULT_STATE, action){
     switch (action.type){
+        case types.TOGGLE_COMPLETED:
+            return {...state, single: action.payload.data.todo}
+        case types.CLEAR_SINGLE_ITEM:
+            return {...state, single: {}}
         case types.GET_SINGLE_ITEM:
             // console.log(action.payload)
             return {...state, single: action.payload.data.todo};
