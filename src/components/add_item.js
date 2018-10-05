@@ -18,7 +18,7 @@ class AddItem extends Component {
         )
     }
     saveItem = async (values)=>{
-        console.log("Form Values: ", values)
+        // console.log("Form Values: ", values)
         await this.props.addListItem(values);
         this.props.history.push('/');
     }
