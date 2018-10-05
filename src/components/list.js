@@ -8,10 +8,14 @@ class List extends React.Component {
         this.props.getListData();
     }
     render(){
-        console.log('List Props:', this.props)
+        // console.log('List Props:', this.props)
         const { list } = this.props
         const listElements = list.map(item=>{
-            return <li key={item._id} className="collection-item">{item.title}</li>
+            return (
+                <li key={item._id} className="collection-item">
+                    <Link to={`/item/${item._id}`}>{item.title}</Link>
+                </li>
+            )
         })
         return(
             <div>

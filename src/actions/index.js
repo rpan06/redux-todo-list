@@ -19,3 +19,19 @@ export function addListItem(item){
         payload: resp
     }
 }
+
+export function getSingleItem(itemId){
+    const resp = axios.get(`${BASE_URL}/todos/${itemId + API_KEY}`);
+    return {
+        type: types.GET_SINGLE_ITEM,
+        payload: resp
+    }
+}
+
+export function toggleCompleted(itemId){
+    const resp = axios.put(`${BASE_URL}/todos/${itemId + API_KEY}`);
+    return {
+        type: types.TOGGLE_COMPLETED,
+        payload: resp
+    }
+}
